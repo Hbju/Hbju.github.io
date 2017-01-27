@@ -1,0 +1,5 @@
+function slider() {
+	var numberOfAlleles=$('amount');
+	$('#slider').slider({min:1,max:5,step:1,value:numberOfAlleles,slide:function(event,ui){$("#amount").html(ui.value)},change:function(event,ui){$("#amount").html(ui.value);
+numberOfAlleles=ui.value;}})
+}

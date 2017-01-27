@@ -1,0 +1,103 @@
+body {
+	background-image:url(images.jpg);
+	background-position:center center;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	font-family:'Oswald', 'Times New Roman';
+	font-size:17px;
+}
+header {
+	position:relative;
+	background-color:#149EB1;
+}
+#Title {
+    font-size:45px;
+    font-family:Impact;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+    color: white;
+    display:inline-block;
+    position: relative;
+	margin-left: 450px;
+	margin-right:450px;
+	margin-bottom:-10px;
+}
+#Title a {
+	color:white;
+	text-decoration:none;
+}
+#Title a:hover {
+	color:black;
+	text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+.parties {
+	font-family:"Oswald", Serif;
+	display:inline-block;
+	margin-left:50px;
+	margin-right:20px;
+	font-size:20px;
+}
+header .partie {
+    display:inline-block;
+    position:relative;
+}
+.partie a {
+	text-decoration:none;
+	color:white;
+}
+.partie a:hover {
+	color:black;
+}
+.left {
+	border:1.5px solid black;
+	height:auto;
+	width:15%;
+	padding:-5px;
+	margin-top:5px;
+	background-color:rgba(0, 0, 0, 0.7);
+	position:relative;
+	float:left;
+}
+.left a {
+	text-decoration:none;
+	color:white;
+}
+.left a:hover {
+	color:#149EB1;
+	text-decoration:underline;
+}
+.contenu {
+	border:1.5px solid black;
+	background-color:rgba(260,260,260,0.7);
+	width:84%;
+	height:auto;
+	position:relative;
+	float:right;
+	margin-top:5px;
+	padding-bottom:15px;
+	margin-bottom:5px;
+}
+.contenu * {
+	margin-left: 30px;
+	font-family:'Oswald', serif;
+}
+.Vaincremuco {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+footer {
+	width:100%;
+	height:auto;
+	background-color:#149EB1;
+	position:relative;
+	display:block;
+	clear:both;
+	margin-top:15px;
+	padding-top:1px;
+	padding-left:3px;
+}
+#graphe1 {
+	display:inline-block;
+	float:right;
+}
