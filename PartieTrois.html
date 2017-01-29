@@ -15,32 +15,32 @@
    	<header>
    		<h1 id="Title"><a href="index.html">La mucoviscidose</a></h1>
    		<div class="partie"><ul>
-   			<li class="parties"><a href="PartieUne.html">I./La Mucoviscidose:une maladie génétique mortelle</a></li>
-   			<li class="parties"><a href="PartieDeux.html">II./ Le modèle d'Hardy-Weinberg</a></li>
-   			<li class="parties"><a href="PartieTrois.html">III./ L'application du modèle d'Hardy-Weinberg à la mucoviscidose</a></li>
+   			<li class="parties"><a href="PartieUne.html">I./La Mucoviscidose:une maladie gÃ©nÃ©tique mortelle</a></li>
+   			<li class="parties"><a href="PartieDeux.html">II./ Le modÃ¨le d'Hardy-Weinberg</a></li>
+   			<li class="parties"><a href="PartieTrois.html">III./ L'application du modÃ¨le d'Hardy-Weinberg Ã  la mucoviscidose</a></li>
    		</ul></div>
    	</header>
    	<div class="left">
 		<ul><p style="color:white; font-size:20px; text-decoration:underline; text-align:center; margin-right:35px;">Naviguer dans le site:</p>
 			<li><a href="index.html">Sommaire</a></li>
-			<li><a href="PartieUne.html">Ière partie</a></li>
+			<li><a href="PartieUne.html">IÃ¨re partie</a></li>
 			<li><a href="PartieDeux.html">IIeme partie</a></li>
 			<li><a href="PartieTrois.html">IIIeme partie</a></li>
 			<li><a href="Conclusion.html">Conclusion</a></li>
 		</ul>
    	</div>
 	<div class="contenu">
-		<h1>III./ : L'application du modèle d'Hardy-Weinberg à la mucoviscidose</h1>
+		<h1>III./ : L'application du modÃ¨le d'Hardy-Weinberg Ã  la mucoviscidose</h1>
 			<h2>Introduction</h2>
-				<p>Notre but, dans cette partie, sera dans un premier temps de démontrer en quoi le modèle d'Hardy-Weinberg est applicable au cas de la mucoviscidose selon les hypothèses que nous avons posées plus tôt.</p>
-				<p>Nous calculerons ensuite, à l'aide d'un programme, les probabilités d'être atteints par la maladie au bout d'un certain nombre de générations</p>
-				<p>Enfin, nous concluerons sur les limites de cette application à la mucoviscidose du modèle d'Hardy-Weinberg</p>
-			<h2>A. Les hypothèses du modèle d'Hardy-Weinberg appliquées à la mucoviscidose</h2>
-				<p>Nous appliquons le modèle d'Hardy-Weinberg à l'espèce humaine, que l'on suppose panmixte.
+				<p>Notre but, dans cette partie, sera dans un premier temps de dÃ©montrer en quoi le modÃ¨le d'Hardy-Weinberg est applicable au cas de la mucoviscidose selon les hypothÃ¨ses que nous avons posÃ©es plus tÃ´t.</p>
+				<p>Nous calculerons ensuite, Ã  l'aide d'un programme, les probabilitÃ©s d'Ãªtre atteints par la maladie au bout d'un certain nombre de gÃ©nÃ©rations</p>
+				<p>Enfin, nous concluerons sur les limites de cette application Ã  la mucoviscidose du modÃ¨le d'Hardy-Weinberg</p>
+			<h2>A. Les hypothÃ¨ses du modÃ¨le d'Hardy-Weinberg appliquÃ©es Ã  la mucoviscidose</h2>
+				<p>Nous appliquons le modÃ¨le d'Hardy-Weinberg Ã  l'espÃ¨ce humaine, que l'on suppose panmixte.
 				<ol>
-					<li>Le nombre d'êtres humains atteints par la mucoviscidose est de l'ordre de 70 000 personnes, ce qui est amplement suffisant pour appliquer le modèle d'Hardy-Weinberg.</li>
-					<li>Les humains sont diploïdes, en effet les chromosomes que l'espèce humaine possède sont présents par paires de 2 en temps normal (sauf anomalie).</li>
-					<li>On applique le modèle à l'échelle de seulement quelques générations (maximum 10)</li>
+					<li>Le nombre d'Ãªtres humains atteints par la mucoviscidose est de l'ordre de 70 000 personnes, ce qui est amplement suffisant pour appliquer le modÃ¨le d'Hardy-Weinberg.</li>
+					<li>Les humains sont diploÃ¯des, en effet les chromosomes que l'espÃ¨ce humaine possÃ¨de sont prÃ©sents par paires de 2 en temps normal (sauf anomalie).</li>
+					<li>On applique le modÃ¨le Ã  l'Ã©chelle de seulement quelques gÃ©nÃ©rations (maximum 10).</li>
 				</ol>
 		<input type='text' id="amount" readonly style="border:0; background-color:rgba(245,245,245,0.7); font-size:20px; width:210px;">
 		<div id='slider' style='width:210px'></div>
@@ -53,18 +53,18 @@
     			step: 1,
     			slide:function(event,ui){
     				if(ui.value==1){
-    					$("#amount").val('Calculons pour ' + ui.value + ' génération.');
+    					$("#amount").val('Calculons pour ' + ui.value + ' gÃ©nÃ©ration.');
     				}
     				else {
-    					$("#amount").val('Calculons pour ' + ui.value + ' générations.');
+    					$("#amount").val('Calculons pour ' + ui.value + ' gÃ©nÃ©rations.');
     				}
     			}
 			});
 			if($('#slider').slider("value")==1) {
-				$('#amount').val('Calculons pour ' + $('#slider').slider("value")+ ' génération.');
+				$('#amount').val('Calculons pour ' + $('#slider').slider("value")+ ' gÃ©nÃ©ration.');
 			}
 			else {
-				$('#amount').val('Calculons pour ' + $('#slider').slider("value")+ ' générations.');
+				$('#amount').val('Calculons pour ' + $('#slider').slider("value")+ ' gÃ©nÃ©rations.');
 			}
 		</script>
 	</div>
