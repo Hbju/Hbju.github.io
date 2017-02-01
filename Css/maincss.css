@@ -1,5 +1,5 @@
 body {
-	background-image:url(images.jpg);
+	background-image:url(background2.jpg);
 	background-position:center center;
 	background-attachment:fixed;
 	background-repeat:no-repeat;
@@ -9,7 +9,7 @@ body {
 }
 header {
 	position:relative;
-	background-color:#149EB1;
+	background-color:#1776A5;
 }
 #Title {
     font-size:45px;
@@ -61,7 +61,7 @@ header .partie {
 	color:white;
 }
 .left a:hover {
-	color:#149EB1;
+	color:#1776A5;
 	text-decoration:underline;
 }
 .contenu {
@@ -87,7 +87,7 @@ header .partie {
 footer {
 	width:100%;
 	height:auto;
-	background-color:#149EB1;
+	background-color:#1776A5;
 	position:relative;
 	display:block;
 	clear:both;
