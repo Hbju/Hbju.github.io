@@ -99,3 +99,6 @@ footer {
 	display:inline-block;
 	float:right;
 }
+.contenu p {
+	text-indent:25px;
+}
