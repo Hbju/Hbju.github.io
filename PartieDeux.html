@@ -32,19 +32,86 @@
 	<div class="contenu">
 		<h1>II./ la loi d'Hardy-Weinberg</h1>
 		<div id='tabs'>
+
 			<ol>
-				<li><a href='#P1'>Présentation</a></li>
-				<li><a href='#P2'>Application</a></li>
-				<li><a href='#P3'>Limites</a></li>
+				<li><a href='#P1'>A. Présentation</a></li>
+				<li><a href='#P2'>B. Application</a></li>
+				<li><a href='#P3'>C. Limites</a></li>
 			</ol>
-			<div id="#P1">
 
+			<div id="P1">
+				<h2>1. Présentation historique</h2>
+					<p>Geodfroy Harold Hardy est un mathématicien allemand né en 1877. Connu pour ses travaux restés dans la postérité, il avait  une vision très pure des mathématiques. Il fut notamment le professeur d’Alan Turing qui déchiffra le « code d’Enigma », machine qui codait les messages allemands pendant la seconde guerre mondiale. Le problème de la prévalence des allèles au sein d’un gène lui est posé par Reginald Punnet, un généticien allemand, il travaillera seul sur sa loi dont la date exacte est inconnue. Hardy n’a jamais travaillé en collaboration avec le médecin allemand Weinberg, seulement son nom a été associé à la loi, alors  qualifié de loi d’Hardy, après que l’on ait découvert que l’allemand avait déjà formulé la loi de  manière indépendante en 1908.<p>
+				<h2>2. Hypothèse de départ</h2>
+					<p>Pour appliquer l’équilibre d’Hardy-Weinberg, on suppose plusieurs hypothèses de départ: </p>
+					<ul>
+						<li>Une population importante, d’après la loi des grands nombres, plus l’échantillon observé est grand, plus les statistiques se rapprochent de la réalité.</li>
+						<li>L’espèce est  diploïde. Dans chaque cellule d’un individu diploïde on observe deux fois le même chromosome.</li>
+						<li>Il n’y a pas de migrations d’une partie de l’échantillon.</li>
+						<li>On suppose qu’il y a panmixie, c’est-à-dire que les individus sont répartis de manière homogène et qu’ils se reproduisent sans distinction entre eux.</li>
+						<li>Le gène observé ne subit pas de mutations ou elles n’ont aucun impact sur les allèles.</li>
+						<li>L’espèce observée a une reproduction sexuée.</li>
+					</ul>
+					<p>Si ces hypothèses sont vérifiées on peut alors appliquer l’équilibre d’Hardy-Weinberg avec une précision relativement bonne.</p>
+				<h2>3. Equation théorique</h2>
+					<p>Lorsque les conditions précédentes sont vérifiées, on peut appliquer l'équilibre suivant à une population pour connaître la probabilité que la génération suivante ait deux allèles p, deux allèles q ou soit hétérozygote</p>
+					<p>Soit P et Q deux allèle d’un gène quelconque X, soit  P(P)=p et P(Q)=q, les probabilités respectives de répartition de ces gènes. On a alors p² +2pq +q²=1</p>
+					<p>Par conséquent, on obtient: </p>
+					<ul>
+						<li> que la probabilité P1 de posséder deux fois l’allèle P est de P1= P(P) x P(P)= p x p = p²</li>
+						<li> que la probabilité P2 de posséder deux fois l’allèle Q est de P2= P(Q) x P(Q) = q x q = q²</li>
+						<li> que la probabilité P3 d’être hétérozygote est de  P3= 2 x P(P) x P(Q) = 2 x p x q= 2pq</li>
+					</ul>
 			</div>
-			<div id="#P2">
 
+			<div id="P2">
+				<h2>1. Cellules somatiques</h2>
+					<p>On considère une cellule somatique contenant un gène avec un allèle récessif Q et un allèle dominant P.</br>
+					La probabilité d’être porteur de P est donc : P(P)= P3 + P1= 2pq + p² </br>
+					Celle d’être atteint par Q (et donc de posséder l’allèle Q en deux exemplaires) : Q= q².
+					<p>Pour deux allèles codominants, la probabilité de posséder deux fois l’allèle P, et donc de posséder le caractère correspondant à cet allèle du gène sera :	 P(1)= p².</br>
+					Celle de posséder deux fois l’allèle Q, et donc de posséder le caractère correspondant à l’allèle Q sera :	P(2)= q² </br>
+					Celle d’avoir coexpression (c’est à dire que les deux allèles codominants sont présents et qu’ils donnent un nouveau caractère différent des deux allèles P et Q) sera : P(PQ)= 2pq</p>
+				<h2>2. Exploitation</h2>
+					<p>L’obtention de ces résultats permet  de calculer la probabilité de l’apparition de l’allèle correspondant en connaissant le taux de présence du premier allèle dans une population donnée. L’équilibre d’Hardy-Weinberg nous permet, d’après les parties précédentes, de calculer les probabilités des différents gènes possibles. </p>
+					<p>En exploitant ces résultats on peut créer un graphique exprimant P(Q) , P(P) et P(PQ)</p>
+					<center><img src="Images/images/image00.gif"></center>
+				<h2>3. Au-delà du gène diallélique</h2>
+					<p>Outre les gènes dialléliques , il est possible d’étendre la loi d’Hardy-Weinberg aux gènes polyalléliques . Ainsi on a pour 3 allèles on a  p + q + r = 1 avec p, q et r trois fréquences d’allèles .</p>
+					<p>Au niveau génotypique , on a donc  (p + q + r )²=1 , cela équivaut à p² + 2pq + 2qr + 2pr + r² + q²=1</p>
+					<p>Ainsi pour un nombre n d’allèles au sein d’un gène , les fréquences génotypiques seront exprimées par l’équation suivante: <img src="Images/Hardy-Weinberg.png" style="margin-bottom:-10px;"></p>
 			</div>
-			<div id="#P3">
 
+			<div id="P3">
+				<h2>1. Hypothèse de départ</h2>
+					<p>On compte six hypothèses de départ, qui sont autant de limites à l’application de la loi puisque dans le cas où une des hypothèses de départ n’est pas vérifiée, une approximation existe lorsqu'on applique strictement la loi. Or les hypothèses de départ étant très restrictives, notamment l’hypothèse de panmixie  (les individus se reproduisent entre eux de manière aléatoire) qui n’est pas vérifiable pour l’homme, ou encore l’absence des mutations sur le gène observé puisque les mutations sont omniprésentes dans les cellules humaines: ce sont elles qui permettent la diversité génétique. </p>
+				<h2>2. Test de la précision du Modèle</h2>
+					<p>Une étude portée sur 730 aborigènes australiens et utilisée par l’université de Lyon donne les résultats suivants :</br>
+					22 sont porteurs de AA, 216 sont hétérozygotes donc porteurs de Aa et 492 sont porteurs de aa. On peut alors calculer la fréquence des allèles A et a: soient les fréquences P(A) et P(a).</p>
+					<p style="text-indent:0px;">P(A) = (P(AA)+P(Aa)/2)/EffectifTotal</br>
+					P(A) = (22 + 216/2)/730 = 0.178</br>
+					P(a) = (P(aa)+P(Aa)/2)/EffectifTotal</br>
+					P(a)= (492 + 216/2)/730 = 0.822</p>
+					<p style="text-indent:0px;">D’après la loi d’Hardy-Weinberg, on peut alors calculer les effectifs théoriques alléliques suivants: </br>
+					P(AA)=  (P(A))² * 730 = 23.1 </br>
+					P(Aa)= 2 * P(A) * P(a) * 730 = 213.6 </br>
+					P(aa)= (P(a))² * 730 = 493.2 </p>
+					<p style="text-indent:0px;">Calculons l’erreur relative E:</br>
+					E(A)=( P(AA)théorique - P(AA) réelle)/P(AA)théorique</br>
+					E(A)= 0.0476</br>
+					E(A)= 4.76% soit moins de 5%</p>
+
+					<p style="text-indent:0px;">E(Aa) =(P(Aa)théorique-P(Aa)réèlle)/P(Aa) théorique</br>
+					E(Aa) = -0.0112</br>
+					E(Aa) = -1.12 % soit moins de 5%</p>
+
+					<p style="text-indent:0px;">E(aa)= (P(aa)théorique- P(aa) réèlle)/P(aa)théorique</br>
+					E(aa)=0.0024</br>
+					E(aa)= 0.24% soit moins de 5 %</p>
+
+					<p>D’après ces calculs, la loi d’Hardy-Weinberg peut donc être appliquée avec une erreur relative inférieure à 5%. </p>
+
+					<p>La loi d’Hardy-Weinberg nous donne donc une bonne approximation des fréquences alléliques possibles au sein d’un même gène, elle est donc applicable au cas de la mucoviscidose.</p>
 			</div>
 		</div>
 	</div>
