@@ -32,40 +32,34 @@
 	<div class="contenu">
 		<h1>III./ L'application du modèle d'Hardy-Weinberg à la mucoviscidose</h1>
 			<h2>Introduction</h2>
-				<p>Notre but, dans cette partie, sera dans un premier temps de démontrer en quoi le modèle d'Hardy-Weinberg est applicable au cas de la mucoviscidose selon les hypothèses que nous avons posées plus tôt.</p>
-				<p>Nous calculerons ensuite, à l'aide d'un programme, les probabilités d'être atteints par la maladie au bout d'un certain nombre de générations</p>
-				<p>Enfin, nous concluerons sur les limites de cette application à la mucoviscidose du modèle d'Hardy-Weinberg</p>
-			<h2>A. Les hypothèses du modèle d'Hardy-Weinberg appliquées à la mucoviscidose</h2>
-				<p>Nous appliquons le modèle d'Hardy-Weinberg à l'espèce humaine, que l'on suppose panmixte.
-				<ol>
-					<li>Le nombre d'êtres humains atteints par la mucoviscidose est de l'ordre de 70 000 personnes, ce qui est amplement suffisant pour appliquer le modèle d'Hardy-Weinberg.</li>
-					<li>Les humains sont diploïdes, en effet les chromosomes que l'espèce humaine possède sont présents par paires de 2 en temps normal (sauf anomalie).</li>
-					<li>On applique le modèle à l'échelle de seulement quelques générations (maximum 10)</li>
-				</ol>
-		<input type='text' id="amount" readonly style="border:0; background-color:rgba(245,245,245,0.7); font-size:20px; width:210px;">
-		<div id='slider' style='width:210px'></div>
+				<p>Notre but, dans cette partie, sera de comparer les valeurs théoriques des fréquences génotypiques obtenues à l'aide du modèle d'Hardy-Weinberg et les valeurs réelles de ces fréquences.<p>
+				<p>Ainsi, nous commencerons par calculer les valeurs réelles à partir de différentes données, puis à l'aide d'un programme nous calculerons les valeurs théoriques à l'aide de l'équilibre de Hardy-Weinberg.</p>
+			<h2>A./Calcul des valeurs réelles</h2>
+			<h2>B./Calcul des valeurs théoriques</h2>
+				<div id="calculateur">
+					<p> L'allèle A a pour fréquence: <input type="number" id="fqA" max="1" min="0" style="width:45px; margin-left:-5px;"></input>.</p>
+					<p> L'allèle B a pour fréquence: <input type="number" id="fqB" max="1" min="0" style="width:45px; margin-left:-5px;"></input>.</p>
+					<p>La fréquence du génotype AA est de: <span id="fqAA"></span>.
+					<p>La fréquence du génotype AB est de: <span id="fqAB"></span>.
+					<p>La fréquence du génotype BB est de: <span id="fqBB"></span>.
+				</div>
 		<script>
-			var nombreAlleles=$('#amount').html;
-			$( "#slider" ).slider({
-				value:1,
-    			min: 1,
-    			max: 10,
-    			step: 1,
-    			slide:function(event,ui){
-    				if(ui.value==1){
-    					$("#amount").val('Calculons pour ' + ui.value + ' génération.');
-    				}
-    				else {
-    					$("#amount").val('Calculons pour ' + ui.value + ' générations.');
-    				}
-    			}
-			});
-			if($('#slider').slider("value")==1) {
-				$('#amount').val('Calculons pour ' + $('#slider').slider("value")+ ' génération.');
+			function fqAA () {
+				$("#fqAA").html($("#fqA").val()*$("#fqA").val());
 			}
-			else {
-				$('#amount').val('Calculons pour ' + $('#slider').slider("value")+ ' générations.');
+			$("#fqA").change(fqAA);
+			fqAA();
+			function fqBB () {
+				$("#fqBB").html($("#fqB").val()*$("#fqB").val());
 			}
+			$("#fqB").change(fqBB);
+			fqBB();
+			function fqAB () {
+				$("#fqAB").html(2*$("#fqA").val()*$("#fqB").val());
+			}
+			$("#fqA").change(fqAB);
+			$("#fqB").change(fqAB);
+			fqAB();
 		</script>
 	</div>
 	<footer>
