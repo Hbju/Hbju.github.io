@@ -37,8 +37,8 @@
 			<h2>A./Calcul des valeurs réelles</h2>
 			<h2>B./Calcul des valeurs théoriques</h2>
 				<div id="calculateur">
-					<p> L'allèle A a pour fréquence: <input type="number" id="fqA" max="1" min="0" style="width:45px; margin-left:-5px;"></input>.</p>
-					<p> L'allèle B a pour fréquence: <input type="number" id="fqB" max="1" min="0" style="width:45px; margin-left:-5px;"></input>.</p>
+					<p> L'allèle A a pour fréquence: <input type="number" id="fqA" max="1" min="0" style="width:45px; margin-left:-5px;" step="0.05" value="0"></input>.</p>
+					<p> L'allèle B a pour fréquence: <input type="number" id="fqB" max="1" min="0" style="width:45px; margin-left:-5px;" step="0.05" value="0"></input>.</p>
 					<p>La fréquence du génotype AA est de: <span id="fqAA" style="margin-left:-3px"></span>.
 					<p>La fréquence du génotype AB est de: <span id="fqAB" style="margin-left:-3px"></span>.
 					<p>La fréquence du génotype BB est de: <span id="fqBB" style="margin-left:-3px"></span>.
@@ -47,18 +47,48 @@
 			function fqAA () {
 				$("#fqAA").html($("#fqA").val()*$("#fqA").val());
 			}
-			$("#fqA").change(fqAA);
-			fqAA();
+
 			function fqBB () {
 				$("#fqBB").html($("#fqB").val()*$("#fqB").val());
 			}
-			$("#fqB").change(fqBB);
-			fqBB();
+
 			function fqAB () {
 				$("#fqAB").html(2*$("#fqA").val()*$("#fqB").val());
 			}
+
+			$("#fqA").change(function () {
+				$("#fqB").val(1-$("#fqA").val());
+				var max = parseInt($("#fqA").attr('max'));
+				var min = parseInt($("#fqA").attr('min'));
+				if ($("#fqA").val() > max) {
+					$("#fqA").val(max);
+				}
+				else if ($("#fqA").val()<min) {
+					$("#fqA").val(min);
+				};
+			});
+
+			$("#fqB").change(function () {
+				$("#fqA").val(1-$("#fqB").val());
+				var max = parseInt($("#fqB").attr('max'));
+				var min = parseInt($("#fqB").attr('min'));
+				if ($("#fqB").val() > max) {
+					$("#fqB").val(max);
+				}
+				else if ($("#fqB").val()<min) {
+					$("#fqB").val(min);
+				};
+			});
+
+			$("#fqA").change(fqAA);
 			$("#fqA").change(fqAB);
+			$("#fqA").change(fqBB);
+			$("#fqB").change(fqAA);
 			$("#fqB").change(fqAB);
+			$("#fqB").change(fqBB);
+			
+			fqAA();
+			fqBB();
 			fqAB();
 		</script>
 	</div>
