@@ -19,7 +19,7 @@ header {
     color: white;
     display:inline-block;
     position: relative;
-	margin-bottom:-1%;
+	margin-bottom:1%;
 }
 #Title a {
 	color:white;
@@ -36,17 +36,18 @@ header {
 	margin-left:0.2%;
 	font-size:1.3em;
 }
-#li1 {
+#left {
 	float:left;
 	margin-right:1.5%;
 }
-#li2 {
-	right:-8%;
+#right {
+	float:right;
 	margin-right:1.5%;
 }
-#li3 {
-	right:-12%;
-	margin-right: -10px;
+#center {
+	margin: 0 auto;
+	clear:both;
+	margin-left: 5%;
 }
 header .partie {
 }
