@@ -5,20 +5,21 @@ body {
 	background-repeat:no-repeat;
 	background-size:100% 100%;
 	font-family:'Oswald', 'Times New Roman';
-	font-size:17px;
+	font-size:1em;
 }
 header {
 	position:relative;
 	background-color:#1776A5;
+	padding-bottom: 1%;
 }
 #Title {
-    font-size:45px;
+    font-size:2.8em;
     font-family:Impact;
 	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
     color: white;
     display:inline-block;
     position: relative;
-	margin-bottom:-10px;
+	margin-bottom:-1%;
 }
 #Title a {
 	color:white;
@@ -30,14 +31,24 @@ header {
 }
 .parties {
 	font-family:"Oswald", Serif;
-	display:inline-block;
-	margin-left:50px;
-	margin-right:20px;
-	font-size:20px;
+	position:relative;
+	display:inline;
+	margin-left:0.2%;
+	font-size:1.1em;
+}
+#li1 {
+	text-align:left;
+	margin-right:1.5%;
+}
+#li2 {
+	text-align:center;
+	margin-right:1.5%;
+}
+#li3 {
+	text-align:right;
+	margin-right: -10px;
 }
 header .partie {
-    display:inline-block;
-    position:relative;
 }
 .partie a {
 	text-decoration:none;
@@ -50,8 +61,8 @@ header .partie {
 	border:1.5px solid black;
 	height:auto;
 	width:15%;
-	padding:-5px;
-	margin-top:5px;
+	padding:-0.5%;
+	margin-top:0.4%;
 	background-color:rgba(0, 0, 0, 0.7);
 	position:relative;
 	float:left;
@@ -71,12 +82,12 @@ header .partie {
 	height:auto;
 	position:relative;
 	float:right;
-	margin-top:5px;
-	padding-bottom:15px;
-	margin-bottom:5px;
+	margin-top:0.4%;
+	padding-bottom:1.2%;
+	margin-bottom:0.4%;
 }
 .contenu * {
-	margin-left: 30px;
+	margin-left: 2.5%;
 	font-family:'Oswald', serif;
 }
 .Vaincremuco {
@@ -100,5 +111,5 @@ footer {
 	float:right;
 }
 .contenu p {
-	text-indent:25px;
+	text-indent:2%;
 }

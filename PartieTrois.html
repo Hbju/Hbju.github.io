@@ -15,9 +15,9 @@
    	<header>
    		<center><h1 id="Title"><a href="index.html">La mucoviscidose</a></h1></center>
    		<div class="partie"><ul>
-   			<li class="parties"><a href="PartieUne.html">I./La Mucoviscidose: une maladie génétique mortelle</a></li>
-   			<li class="parties"><a href="PartieDeux.html">II./ Le modèle d'Hardy-Weinberg</a></li>
-   			<li class="parties"><a href="PartieTrois.html">III./ L'application du modèle d'Hardy-Weinberg à la mucoviscidose</a></li>
+   			<li class="parties" id="li1"><a href="PartieUne.html">I./La Mucoviscidose: une maladie génétique mortelle</a></li>
+   			<li class="parties" id="li2"><a href="PartieDeux.html">II./ Le modèle d'Hardy-Weinberg</a></li>
+   			<li class="parties" id="li3"><a href="PartieTrois.html">III./ L'application du modèle d'Hardy-Weinberg à la mucoviscidose</a></li>
    		</ul></div>
    	</header>
    	<div class="left">
@@ -31,29 +31,33 @@
    	</div>
 	<div class="contenu">
 		<h1>III./ L'application du modèle d'Hardy-Weinberg à la mucoviscidose</h1>
+		<div id='tabs'>
 			<h2>Introduction</h2>
 				<p>Notre but, dans cette partie, sera de comparer les valeurs théoriques des fréquences génotypiques obtenues à l'aide du modèle d'Hardy-Weinberg et les valeurs réelles de ces fréquences.<p>
 				<p>Ainsi, nous commencerons par calculer les valeurs réelles à partir de différentes données, puis à l'aide d'un programme nous calculerons les valeurs théoriques à l'aide de l'équilibre de Hardy-Weinberg.</p>
 			<h2>A./Calcul des valeurs réelles</h2>
+				<img src="Images/Schémapop.jpg" style="heigth:300px;width:350px; float:left; margin-right:1%;">
+				<p>Comme dit précédemment, il y a environ 70 000 cas de mucoviscidose dans le monde, pour 7 milliards d'humains environ. Dans le monde, on considère la prévalence de sa maladie à 1/3500 dans la population caucasienne, qui est la principale atteinte. La fréquence de l'hétérozigotie est de 1 cas sur 25 (toujours dans la population caucasienne). </p>
+				<p> Donc la fréquence des individus sains est de 1-1/3500-1/25 = 3359/3500, soit environ 19/20 (ou 95% de la population caucasienne). Si le gène normal et functionnel est noté A, et que celui responsable de la maladie est noté B, alors la fréquence du génotype AA (individu sain) est de 0.9597, celle du génotype AB (porteur sain) est de 0.04 et celle du génotype BB (individu malade) est de 0.000285.</p>
 			<h2>B./Calcul des valeurs théoriques</h2>
 				<div id="calculateur">
-					<p> L'allèle A a pour fréquence: <input type="number" id="fqA" max="1" min="0" style="width:45px; margin-left:-5px;" step="0.05" value="0"></input>.</p>
-					<p> L'allèle B a pour fréquence: <input type="number" id="fqB" max="1" min="0" style="width:45px; margin-left:-5px;" step="0.05" value="0"></input>.</p>
+					<p> L'allèle A a pour fréquence: <input type="number" id="fqA" max="1" min="0" style="width:45px; margin-left:-5px;" step="0.005" value="0"></input>.</p>
+					<p> L'allèle B a pour fréquence: <input type="number" id="fqB" max="1" min="0" style="width:45px; margin-left:-5px;" step="0.005" value="0"></input>.</p>
 					<p>La fréquence du génotype AA est de: <span id="fqAA" style="margin-left:-3px"></span>.
 					<p>La fréquence du génotype AB est de: <span id="fqAB" style="margin-left:-3px"></span>.
 					<p>La fréquence du génotype BB est de: <span id="fqBB" style="margin-left:-3px"></span>.
 				</div>
 		<script>
 			function fqAA () {
-				$("#fqAA").html($("#fqA").val()*$("#fqA").val());
+				$("#fqAA").html(Math.round($("#fqA").val()*$("#fqA").val()*100000000)/100000000);
 			}
 
 			function fqBB () {
-				$("#fqBB").html($("#fqB").val()*$("#fqB").val());
+				$("#fqBB").html(Math.round($("#fqB").val()*$("#fqB").val()*100000000)/100000000);
 			}
 
 			function fqAB () {
-				$("#fqAB").html(2*$("#fqA").val()*$("#fqB").val());
+				$("#fqAB").html(Math.round(2*$("#fqA").val()*$("#fqB").val()*100000000)/100000000);
 			}
 
 			$("#fqA").change(function () {
@@ -91,6 +95,7 @@
 			fqBB();
 			fqAB();
 		</script>
+		</div>
 	</div>
 	<footer>
 	</footer>
