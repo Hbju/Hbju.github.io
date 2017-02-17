@@ -61,7 +61,7 @@ header .partie {
 .left {
 	border:1.5px solid black;
 	height:auto;
-	width:15%;
+	width:18%;
 	padding:-0.5%;
 	margin-top:0.4%;
 	background-color:rgba(0, 0, 0, 0.7);
@@ -76,16 +76,30 @@ header .partie {
 	color:#1776A5;
 	text-decoration:underline;
 }
+#programme {
+	border:1px solid #0A374E;
+	background-color: #0C4D6F;
+	border-radius: 3px;
+	height: auto;
+	width:17.7%;
+	display: inline-block;
+	clear:left;
+	float:left;
+	margin-top: 1%;
+	padding-left: 0.4%;
+	margin-bottom: 1%
+}
 .contenu {
 	border:1.5px solid black;
 	background-color:rgba(260,260,260,0.7);
-	width:84%;
+	width:81%;
 	height:auto;
 	position:relative;
 	float:right;
 	margin-top:0.4%;
 	padding-bottom:1.2%;
 	margin-bottom:0.4%;
+	display: inline-block;
 }
 .contenu * {
 	margin-left: 2.5%;

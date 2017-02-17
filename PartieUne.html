@@ -41,7 +41,7 @@
 
 				<div id="P2">
 					<img src="images\Graphe1.png" alt="Figure 1 : Schéma représentant l’évolution de l’espérance de vie des individus atteints de la mucoviscidose" id="graphe1">
-					<p>D'après une étude réalisée en 2012, la mucoviscidose toucherait jusqu’à 70 000 personnes dans le monde, dont près de 6 000 Français. Chaque année, ce sont 200 enfants qui naissent en France porteurs de cette maladie génétique grave, soit un enfant sur 4 500. La maladie est inégalement répartie géographiquement, en raison des différents socles génétiques: en effet, un enfant sur 3 000 est concerné en Bretagne, contre "seulement" un sur 8 000 dans le Languedoc Roussillon. A l’échelle mondiale, les populations d’Europe sont plus affectées que les populations d’Afrique ou d’Asie. </p>
+					<p class="tooltip">D'après une étude réalisée en 2012, la <a href="bibliographie.html#mucoviscidose" title="une maladie pas hyper sympa">mucoviscidose</a> toucherait jusqu’à 70 000 personnes dans le monde, dont près de 6 000 Français. Chaque année, ce sont 200 enfants qui naissent en France porteurs de cette maladie génétique grave, soit un enfant sur 4 500. La maladie est inégalement répartie géographiquement, en raison des différents socles génétiques: en effet, un enfant sur 3 000 est concerné en Bretagne, contre "seulement" un sur 8 000 dans le Languedoc Roussillon. A l’échelle mondiale, les populations d’Europe sont plus affectées que les populations d’Afrique ou d’Asie. </p>
 					<p>L’espérance de vie des personnes atteintes de la mucoviscidose n'a pas encore dépassé la barre des 50 ans. Cependant, elle a fortement augmenté ces dernières années en passant de 5 ans d'espérance de vie en 1960 à 26 ans en 1990 et à 40 ans en 2010. Cela s’explique grâce aux progrès dans la connaissance de cette maladie, à un dépistage précoce et à des traitements ayant pour objectif de lutter contre les infections bactériennes chroniques et les autres symptômes de la mucoviscidose. L’augmentation de l’espérance de vie a permis, alors que c’était infaisable auparavant, l’apparition de couple avec un ou deux des parents étant malades. Pour éviter, dans des couples d’un individu malade et d’un individu sain, que les enfants soient atteints de la mucoviscidose, des conseils génétiques et des enquêtes familiales sont encouragées.</p>
 					<p>Le plus souvent, les tests de dépistage permettent de mettre en évidence la maladie dès la naissance. Le premier test consiste à prélever plusieurs gouttes dans le talon du nouveau-né (âgé de 3 jours), celles-ci sont analysées pour évaluer la quantité de trypsine immunoréactive dans le sang. C’est une protéine de type enzymatique qui passe dans le sang plus facilement quand un mucus épais obstrue certains canaux d’organes. Plus le taux de concentration de cette enzyme dans le sang est élevé, plus les risques d’être atteint de la mucoviscidose sont grands.  Si les risques sont conséquents, une seconde analyse du sang a lieu et a pour but de rechercher les mutations sur le gène CFTR. Si ce test génétique est positif, alors un troisième test est effectué sur le patient : le test dit de la sueur. Plusieurs gouttes de sueur sont prélevées, après avoir encouragé la sudation du patient. En effet, chez les individus atteints de la mucoviscidose, le taux de concentration en sel de la sueur est particulièrement haut.</p>
 					<p>Du côté de la recherche scientifique, il existe deux différents objectifs tenus par les généticiens : certains veulent traiter le gène muté pour obtenir une protéine correcte, capable de remplir ses fonctions ; d’autres préfèrent se concentrer sur le traitement et l’atténuation des symptômes de la maladie.</p>
@@ -79,7 +79,64 @@
 
 	<script>
 		$("#tabs").tabs();
+		$( ".tooltip" ).tooltip();
 	</script>
+	<div id="programme">
+		<h3>Calculateur d'Hardy-Weinberg</h3>
+			<p> Fréquence de l'allèle A: <input type="number" id="fqA" max="1" min="0" style="width:65px; margin-left:-1px;" step="0.005" value="0"></input>.</p>
+			<p> Fréquence de l'allèle B: <input type="number" id="fqB" max="1" min="0" style="width:65px; margin-left:-2px;" step="0.005" value="0"></input>.</p>
+			<p>Fréquence du génotype AA: <span id="fqAA" style="margin-left:-3px"></span>.
+			<p>Fréquence du génotype AB: <span id="fqAB" style="margin-left:-3px"></span>.
+			<p>Fréquence du génotype BB: <span id="fqBB" style="margin-left:-3px"></span>.
+			<script>
+				function fqAA () {
+				$("#fqAA").html(Math.round($("#fqA").val()*$("#fqA").val()*1000000000000)/1000000000000);
+				}
+
+				function fqBB () {
+				$("#fqBB").html(Math.round($("#fqB").val()*$("#fqB").val()*1000000000000)/1000000000000);
+				}
+
+				function fqAB () {
+				$("#fqAB").html(Math.round(2*$("#fqA").val()*$("#fqB").val()*1000000000000)/1000000000000);
+				}
+
+				$("#fqA").change(function () {
+					$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
+					var max = parseInt($("#fqA").attr('max'));
+					var min = parseInt($("#fqA").attr('min'));
+					if ($("#fqA").val() > max) {
+						$("#fqA").val(max);
+					}
+					else if ($("#fqA").val()<min) {
+						$("#fqA").val(min);
+					};
+				});
+
+				$("#fqB").change(function () {
+					$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
+					var max = parseInt($("#fqB").attr('max'));
+					var min = parseInt($("#fqB").attr('min'));
+					if ($("#fqB").val() > max) {
+						$("#fqB").val(max);
+					}
+					else if ($("#fqB").val()<min) {
+						$("#fqB").val(min);
+					};
+				});
+
+				$("#fqA").change(fqAA);
+				$("#fqA").change(fqAB);
+				$("#fqA").change(fqBB);
+				$("#fqB").change(fqAA);
+				$("#fqB").change(fqAB);
+				$("#fqB").change(fqBB);
+			
+				fqAA();
+				fqBB();
+				fqAB();
+			</script>
+	</div>
 	<footer>
 	</footer>
     </body>

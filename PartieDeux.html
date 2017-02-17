@@ -119,6 +119,62 @@
 	<script>
 		$("#tabs").tabs();
 	</script>
+	<div id="programme">
+		<h3>Calculateur d'Hardy-Weinberg</h3>
+			<p> Fréquence de l'allèle A: <input type="number" id="fqA" max="1" min="0" style="width:65px; margin-left:-1px;" step="0.005" value="0"></input>.</p>
+			<p> Fréquence de l'allèle B: <input type="number" id="fqB" max="1" min="0" style="width:65px; margin-left:-2px;" step="0.005" value="0"></input>.</p>
+			<p>Fréquence du génotype AA: <span id="fqAA" style="margin-left:-3px"></span>.
+			<p>Fréquence du génotype AB: <span id="fqAB" style="margin-left:-3px"></span>.
+			<p>Fréquence du génotype BB: <span id="fqBB" style="margin-left:-3px"></span>.
+			<script>
+				function fqAA () {
+				$("#fqAA").html(Math.round($("#fqA").val()*$("#fqA").val()*1000000000000)/1000000000000);
+				}
+
+				function fqBB () {
+				$("#fqBB").html(Math.round($("#fqB").val()*$("#fqB").val()*1000000000000)/1000000000000);
+				}
+
+				function fqAB () {
+				$("#fqAB").html(Math.round(2*$("#fqA").val()*$("#fqB").val()*1000000000000)/1000000000000);
+				}
+
+				$("#fqA").change(function () {
+					$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
+					var max = parseInt($("#fqA").attr('max'));
+					var min = parseInt($("#fqA").attr('min'));
+					if ($("#fqA").val() > max) {
+						$("#fqA").val(max);
+					}
+					else if ($("#fqA").val()<min) {
+						$("#fqA").val(min);
+					};
+				});
+
+				$("#fqB").change(function () {
+					$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
+					var max = parseInt($("#fqB").attr('max'));
+					var min = parseInt($("#fqB").attr('min'));
+					if ($("#fqB").val() > max) {
+						$("#fqB").val(max);
+					}
+					else if ($("#fqB").val()<min) {
+						$("#fqB").val(min);
+					};
+				});
+
+				$("#fqA").change(fqAA);
+				$("#fqA").change(fqAB);
+				$("#fqA").change(fqBB);
+				$("#fqB").change(fqAA);
+				$("#fqB").change(fqAB);
+				$("#fqB").change(fqBB);
+			
+				fqAA();
+				fqBB();
+				fqAB();
+			</script>
+	</div>
 	<footer>
 	</footer>
     </body>

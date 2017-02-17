@@ -3,6 +3,7 @@
     <head>
 		<title>Tpe AME: La Mucoviscidose et Hardy-Weinberg</title>
 		<link href="maincss.css" type="text/css" rel="stylesheet"/>
+		<link href='programme.css' type="text/css" rel="stylesheet"/>
 		<link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
 		<meta charset="UTF-8">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -30,6 +31,7 @@
 				<li><a href="https://soutenir.vaincrelamuco.org/?cid=1">Faire un don</a></li>
 			</ul>
    		</div>
+
 	<div class="contenu">
 		<h1>III./ L'application du modèle d'Hardy-Weinberg à la mucoviscidose</h1>
 		<h2>Introduction</h2>
@@ -50,67 +52,71 @@
 			</div>
 
 			<div id="P2">
-			<h2>B./Calcul des valeurs théoriques</h2>
-					<p> L'allèle A a pour fréquence: <input type="number" id="fqA" max="1" min="0" style="width:65px; margin-left:-5px;" step="0.005" value="0"></input>.</p>
-					<p> L'allèle B a pour fréquence: <input type="number" id="fqB" max="1" min="0" style="width:65px; margin-left:-5px;" step="0.005" value="0"></input>.</p>
-					<p>La fréquence du génotype AA est de: <span id="fqAA" style="margin-left:-3px"></span>.
-					<p>La fréquence du génotype AB est de: <span id="fqAB" style="margin-left:-3px"></span>.
-					<p>La fréquence du génotype BB est de: <span id="fqBB" style="margin-left:-3px"></span>.
+			
+				
 			</div>
 
 			<div id="P3">
 			</div>
 		</div>
-		<script>
-			function fqAA () {
+	</div>
+	<div id="programme">
+		<h3>Calculateur d'Hardy-Weinberg</h3>
+			<p> Fréquence de l'allèle A: <input type="number" id="fqA" max="1" min="0" style="width:65px; margin-left:-1px;" step="0.005" value="0"></input>.</p>
+			<p> Fréquence de l'allèle B: <input type="number" id="fqB" max="1" min="0" style="width:65px; margin-left:-2px;" step="0.005" value="0"></input>.</p>
+			<p>Fréquence du génotype AA: <span id="fqAA" style="margin-left:-3px"></span>.
+			<p>Fréquence du génotype AB: <span id="fqAB" style="margin-left:-3px"></span>.
+			<p>Fréquence du génotype BB: <span id="fqBB" style="margin-left:-3px"></span>.
+			<script>
+				function fqAA () {
 				$("#fqAA").html(Math.round($("#fqA").val()*$("#fqA").val()*1000000000000)/1000000000000);
-			}
+				}
 
-			function fqBB () {
+				function fqBB () {
 				$("#fqBB").html(Math.round($("#fqB").val()*$("#fqB").val()*1000000000000)/1000000000000);
-			}
+				}
 
-			function fqAB () {
+				function fqAB () {
 				$("#fqAB").html(Math.round(2*$("#fqA").val()*$("#fqB").val()*1000000000000)/1000000000000);
-			}
-
-			$("#fqA").change(function () {
-				$("#fqB").val(1-$("#fqA").val());
-				var max = parseInt($("#fqA").attr('max'));
-				var min = parseInt($("#fqA").attr('min'));
-				if ($("#fqA").val() > max) {
-					$("#fqA").val(max);
 				}
-				else if ($("#fqA").val()<min) {
-					$("#fqA").val(min);
-				};
-			});
 
-			$("#fqB").change(function () {
-				$("#fqA").val(1-$("#fqB").val());
-				var max = parseInt($("#fqB").attr('max'));
-				var min = parseInt($("#fqB").attr('min'));
-				if ($("#fqB").val() > max) {
-					$("#fqB").val(max);
-				}
-				else if ($("#fqB").val()<min) {
-					$("#fqB").val(min);
-				};
-			});
+				$("#fqA").change(function () {
+					$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
+					var max = parseInt($("#fqA").attr('max'));
+					var min = parseInt($("#fqA").attr('min'));
+					if ($("#fqA").val() > max) {
+						$("#fqA").val(max);
+					}
+					else if ($("#fqA").val()<min) {
+						$("#fqA").val(min);
+					};
+				});
 
-			$("#fqA").change(fqAA);
-			$("#fqA").change(fqAB);
-			$("#fqA").change(fqBB);
-			$("#fqB").change(fqAA);
-			$("#fqB").change(fqAB);
-			$("#fqB").change(fqBB);
+				$("#fqB").change(function () {
+					$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
+					var max = parseInt($("#fqB").attr('max'));
+					var min = parseInt($("#fqB").attr('min'));
+					if ($("#fqB").val() > max) {
+						$("#fqB").val(max);
+					}
+					else if ($("#fqB").val()<min) {
+						$("#fqB").val(min);
+					};
+				});
+
+				$("#fqA").change(fqAA);
+				$("#fqA").change(fqAB);
+				$("#fqA").change(fqBB);
+				$("#fqB").change(fqAA);
+				$("#fqB").change(fqAB);
+				$("#fqB").change(fqBB);
 			
-			fqAA();
-			fqBB();
-			fqAB();
+				fqAA();
+				fqBB();
+				fqAB();
 
-			$("#tabs").tabs();
-		</script>
+				$("#tabs").tabs();
+			</script>
 	</div>
 	<footer>
 	</footer>
