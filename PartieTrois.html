@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="Jquery UI/jquery-ui.min.css">
 		<script src="Jquery UI/external/jquery/jquery.js"></script>
 		<script src="Jquery UI/jquery-ui.min.js"></script>
+		<script src="programme.js"></script>
     </head>
     <body>
    		<header>
@@ -24,7 +25,7 @@
    		<div class="left">
 			<ul><p style="color:white; font-size:20px; text-decoration:underline; text-align:center; margin-right:35px;">Naviguer dans le site: </p>
 				<li><a href="bibliographie.html">Bibliographie</a></li>
-				<li><a href="PartieUne.html">Lexique</a></li>
+				<li><a href="lexique.html">Lexique</a></li>
 			</ul>
 			<ul><p style="color:white; font-size:20px; text-decoration:underline; text-align:center; margin-right:35px;">Aller plus loin</p>
 				<li><a href="https://www.vaincrelamuco.org/">Le site français de la mucoviscidose</a></li>
@@ -46,77 +47,47 @@
 			
 			<div id="P1">
 				<img src="images/Schémapop.jpg" style="heigth:370px; width:400px; float:left; margin-right:1%;">
-				<p>Comme dit précédemment, il y a environ 70 000 cas de mucoviscidose dans le monde, pour 7 milliards d'humains environ. Dans le monde, on considère la prévalence de sa maladie à 1/3500 (environ égal à 0.000285)dans la population caucasienne, qui est la principale atteinte. La fréquence de l'hétérozigotie est de 1 cas sur 25 (toujours dans la population caucasienne). </p>
+				<p>Comme dit précédemment, il y a environ 70 000 cas de mucoviscidose dans le monde, pour 7 milliards d'humains environ. Dans le monde, on considère la prévalence de sa maladie à 1/3500 (soit environ 0.000285)dans la population caucasienne, qui est la principale atteinte. La fréquence de l'hétérozigotie est de 1 cas sur 25 (toujours dans la population caucasienne). </p>
 				<p> Donc la fréquence des individus sains est de 1-1/3500-1/25 = 3359/3500, soit une fréquence d'environ 0.9597. Si le gène normal et functionnel est noté A, et que celui responsable de la maladie est noté B, alors la fréquence du génotype AA (individu sain) est de 0.9597, celle du génotype AB (porteur sain) est de 0.04 et celle du génotype BB (individu malade) est de 0.000285.</p>
-				<p>L'allèle A (donc sain, normal) a donc pour fréquence de fqAA+fqAB/2 = 3359/3500+0.04/2 = 0.9797  et l'allèle B (responsable de la mucoviscidose) a pour fréquence fqBB+fqAB/2 = 1/3500+0.04/2 = 0.0202.</p>
+				<p>L'allèle A (donc sain, normal) a donc pour fréquence de fqAA+fqAB/2 = 3359/3500+0.04/2 = 0.9797  et l'allèle B (responsable de la mucoviscidose) a pour fréquence fqBB+fqAB/2 = 1/3500+0.04/2 = 0.020287.</p>
 			</div>
 
 			<div id="P2">
-			
+				<h2>A./Hypothèses</h2>
+				<p class="tooltip">Avant de pouvoir appliquer la loi d'Hardy-Weinberg à la mucoviscidose, il faut vérifier que les <a href="PartieDeux.html#hypothèses" title="Les hypothèses du modèle" style="margin-left:0px;">hypothèses</a> du modèle sont appliquables à cette maladie génétique. Comme vu précedemment, en effet, l'équilibre d'Hardy-Weinberg possède un certain nombre d'hypothèses à vérifier avant de pouvoir appliquer le modèle.</p>
+				<ul>
+					<li>Ainsi, il faut une population importante pour pouvoir vérifier l'hypothèse des grands nombres. Ici, on étudie l'ensemble de la population malade et saine. Donc la loi des grands nombres est forcément vérifiée.</li>
+					<li>L'espèce doit ici être diploïde, ce qui est le cas de l'homme</li>
+					<li>L'espèce ne doit pas migrer: malheureusement, et en particulier dans le monde d'aujourd'hui, l'espèce humaine est capable d'énormément bouger, donc cette hypothèse n'est pas vérifiée.</li>
+					<li>La panmixie n'est pas non plus vérifiée, l'homme étant doté d'une volonté propre, il est capable de choisir, comme les autres mammifères, avec qui s'accoupler, il n'y a donc pas panmixie. Cette hypothèse n'est pas non plus vérifier.</li>
+				<p>À l'aide du calculateur situé à gauche du site, on calcule les valeurs théoriques. Ces valeurs sont obtenues par la loi d'Hardy-Weinberg.<p>
+				<p>Ainsi, on entre dans la première case la fréquence de l'allèle sain, soit 0.979714, et dans la deuxième la fréquence de l'allèle responsable de la mucoviscidose, soit 0.020287 (bien que cela ne soit pas nécessaire, les valeurs s'afficheront en effet automatiquement). On obtient alors, juste en-dessous, la fréquence de chaque génotype, soit respectivement 0.95984 pour la population saine, 0.03975 pour la population porteuse saine et 0.00041 pour la population malade. 
 				
 			</div>
 
 			<div id="P3">
 			</div>
 		</div>
+		<script>
+			$("#tabs").tabs();
+		</script>
 	</div>
 	<div id="programme">
-		<h3>Calculateur d'Hardy-Weinberg</h3>
-			<p> Fréquence de l'allèle A: <input type="number" id="fqA" max="1" min="0" style="width:65px; margin-left:-1px;" step="0.005" value="0"></input>.</p>
-			<p> Fréquence de l'allèle B: <input type="number" id="fqB" max="1" min="0" style="width:65px; margin-left:-2px;" step="0.005" value="0"></input>.</p>
-			<p>Fréquence du génotype AA: <span id="fqAA" style="margin-left:-3px"></span>.
-			<p>Fréquence du génotype AB: <span id="fqAB" style="margin-left:-3px"></span>.
-			<p>Fréquence du génotype BB: <span id="fqBB" style="margin-left:-3px"></span>.
-			<script>
-				function fqAA () {
-				$("#fqAA").html(Math.round($("#fqA").val()*$("#fqA").val()*1000000000000)/1000000000000);
-				}
-
-				function fqBB () {
-				$("#fqBB").html(Math.round($("#fqB").val()*$("#fqB").val()*1000000000000)/1000000000000);
-				}
-
-				function fqAB () {
-				$("#fqAB").html(Math.round(2*$("#fqA").val()*$("#fqB").val()*1000000000000)/1000000000000);
-				}
-
-				$("#fqA").change(function () {
-					$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
-					var max = parseInt($("#fqA").attr('max'));
-					var min = parseInt($("#fqA").attr('min'));
-					if ($("#fqA").val() > max) {
-						$("#fqA").val(max);
-					}
-					else if ($("#fqA").val()<min) {
-						$("#fqA").val(min);
-					};
-				});
-
-				$("#fqB").change(function () {
-					$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
-					var max = parseInt($("#fqB").attr('max'));
-					var min = parseInt($("#fqB").attr('min'));
-					if ($("#fqB").val() > max) {
-						$("#fqB").val(max);
-					}
-					else if ($("#fqB").val()<min) {
-						$("#fqB").val(min);
-					};
-				});
-
-				$("#fqA").change(fqAA);
-				$("#fqA").change(fqAB);
-				$("#fqA").change(fqBB);
-				$("#fqB").change(fqAA);
-				$("#fqB").change(fqAB);
-				$("#fqB").change(fqBB);
-			
-				fqAA();
-				fqBB();
-				fqAB();
-
-				$("#tabs").tabs();
-			</script>
+		<h3 class="programme">Calculateur d'Hardy-Weinberg</h3>
+			<select id="populations" title="Choisissez une population!">
+				<option selected disabled>Choisissez une population</option>
+				<option value="cauc" id="cauc">Population caucasienne</option>
+				<option value="arab" id="arab">Population du Moyen-Orient</option>
+				<option value="asia" id="asia">Population asiatique</option>
+				<option value="hisp" id="hisp">Population hispanique</option>
+				<option value="noir" id="noir">Population noire</option>
+			</select>
+			<p class="programme"> Fréquence de l'allèle sain: <input type="number" id="fqA" max="1" min="0" style="width:75px; margin-right:5px; float:right" step="0.005" value="0"></input></p>
+			<p class="programme"> Fréquence de l'allèle </br>responsable de la maladie: <input type="number" id="fqB" max="1" min="0" style="width:75px; margin-right:5px; float:right" step="0.005" value="0"></input></p>
+			<p class="programme">Fréquence de la population saine:</br> <center><span id="fqAA" style="margin-left:-3px;" class="programme"></span></center></p>
+			<p class="programme">Fréquence de la population porteuse saine:</br> <center><span id="fqAB" style="margin-left:-3px" class="programme"></span></center></p>
+			<p class="programme">Fréquence de la population malade:</br> <center><span id="fqBB" style="margin-left:-3px" class="programme"></span></center></p>
+			<script src="programme.js"></script>
 	</div>
 	<footer>
 	</footer>
