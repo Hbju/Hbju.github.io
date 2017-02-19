@@ -119,4 +119,6 @@ $(".navigation").mouseleave(function () {
 	$(this).animate({backgroundColor: '#30343E'}, 300);
 })
 
+$("#tabs").tabs();
+
 });

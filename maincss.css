@@ -127,6 +127,10 @@ header .partie {
 	color:#1776A5;
 }
 
+.contenu strong {
+	margin:0;
+}
+
 .contenu table {
 	border-collapse: collapse;
 }
@@ -221,4 +225,7 @@ footer {
 .favicon {
 	width:16px;
 	height:16px;
+}
+strong, span {
+	margin:0;
 }
