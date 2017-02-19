@@ -121,4 +121,16 @@ $(".navigation").mouseleave(function () {
 
 $("#tabs").tabs();
 
+$("#conclusion").mouseenter(function () {
+	$(this).fadeTo('normal', 0.8)
+})
+
+$("#conclusion").mouseleave(function () {
+	$(this).fadeTo('normal', 1)
+})
+
+$("#conclusion").click(function () {
+	window.location.replace('http://hbju.github.io');
+})
+
 });

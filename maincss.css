@@ -229,3 +229,12 @@ footer {
 strong, span {
 	margin:0;
 }
+
+#conclusion {
+	width:100px; 
+	height:10px; 
+	border:1px solid black; 
+	border-radius:0; 
+	background-color: #1776A5; 
+	text-align:center;
+}
