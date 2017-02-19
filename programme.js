@@ -3,15 +3,15 @@ $(document).ready(function() {
 
 
 function fqAA () {
-	$("#fqAA").html(Math.round($("#fqA").val()*$("#fqA").val()*1000000000000)/1000000000000);
+	$("#fqAA").html(Math.round($("#fqA").val()*$("#fqA").val()*1000000)/1000000);
 }
 
 function fqBB () {
-	$("#fqBB").html(Math.round($("#fqB").val()*$("#fqB").val()*1000000000000)/1000000000000);
+	$("#fqBB").html(Math.round($("#fqB").val()*$("#fqB").val()*1000000)/1000000);
 }
 
 function fqAB () {
-	$("#fqAB").html(Math.round(2*$("#fqA").val()*$("#fqB").val()*1000000000000)/1000000000000);
+	$("#fqAB").html(Math.round(2*$("#fqA").val()*$("#fqB").val()*1000000)/1000000);
 }
 
 $("#populations").selectmenu({
@@ -26,16 +26,16 @@ $("#populations").selectmenu({
 			$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
 		}
 		else if (pop==="asia") {
-			$("#fqA").val(0.994413)
-			$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
+			$("#fqA").val(0.994414)
+			$("#fqB").val(Math.round((1-$("#fqA").val())*1000000)/1000000);
 		}
 		else if (pop==="hisp") {
-			$("#fqA").val(0.989012)
-			$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
+			$("#fqA").val(0.989013)
+			$("#fqB").val(Math.round((1-$("#fqA").val())*1000000)/1000000);
 		}
 		else if (pop==="noir") {
 			$("#fqA").val(0.992807)
-			$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
+			$("#fqB").val(Math.round((1-$("#fqA").val())*1000000)/1000000);
 		} 
 		fqAA();
 		fqAB();
@@ -52,7 +52,7 @@ $("#fqA").change(function () {
 	else if ($("#fqA").val()<min) {
 		$("#fqA").val(min);
 	};
-	$("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
+	$("#fqB").val(Math.round((1-$("#fqA").val())*1000000)/1000000);
 });
 
 $("#fqB").change(function () {
@@ -64,7 +64,7 @@ $("#fqB").change(function () {
 	else if ($("#fqB").val()<min) {
 		$("#fqB").val(min);
 	};
-	$("#fqA").val(Math.round((1-$("#fqB").val())*10000000)/10000000);
+	$("#fqA").val(Math.round((1-$("#fqB").val())*1000000)/1000000);
 });
 
 $("#fqA").change(fqAA);
@@ -78,8 +78,37 @@ fqAA();
 fqBB();
 fqAB();
 
-$(document).ready(function(){
-	$("#sticker").sticky({topSpacing:0});
-});
+$(".tooltip").tooltip();
+
+function height () {
+	var contenuh = $(".contenu").height();
+	var lefth = $(".left").height();
+	var programmeh = $("#programme").height();
+	if ( $(".contenu").height() < $(".left").height() + $("#programme").height() ) {
+		contenuh === lefth + programmeh
+		$(".contenu").height($(".left").height() + $("#programme").height());
+	}
+
+}
+height();
+
+$(window).scroll(function () {
+	if($(this).scrollTop() > 400) {
+		$(".left").css({
+			'display':'none'
+		});
+		$("#programme").css({
+			'position':'fixed'
+		});
+	}
+	if ($(this).scrollTop() < 400) {
+		$(".left").css({
+			'display':'inline'
+		});
+		$("#programme").css({
+			'position':'relative'
+		});
+	}
+})
 
 });

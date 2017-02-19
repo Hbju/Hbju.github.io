@@ -15,9 +15,9 @@
    		<header>
    			<center><h1 id="Title"><a href="index.html">La mucoviscidose</a></h1></center>
    			<div class="partie">
-   				<div class="parties" id="left"><a href="PartieUne.html">I./La Mucoviscidose: une maladie génétique mortelle</a></div>
-   				<div class="parties" id="center"><a href="PartieDeux.html">II./ Le modèle d'Hardy-Weinberg</a></div>
-   				<div class="parties" id="right"><a href="PartieTrois.html">III./ L'application du modèle d'Hardy-Weinberg à la mucoviscidose</a></div>
+   				<div class="parties" id="left"><a href="PartieUne.html">I./La Mucoviscidose: une maladie gÃ©nÃ©tique mortelle</a></div>
+   				<div class="parties" id="center"><a href="PartieDeux.html">II./ Le modÃ¨le d'Hardy-Weinberg</a></div>
+   				<div class="parties" id="right"><a href="PartieTrois.html">III./ L'application du modÃ¨le d'Hardy-Weinberg Ã  la mucoviscidose</a></div>
    			</div>
    		</header>
    		<div class="left">
@@ -26,67 +26,29 @@
 				<li><a href="PartieUne.html">Lexique</a></li>
 			</ul>
 			<ul><p style="color:white; font-size:20px; text-decoration:underline; text-align:center; margin-right:35px;">Aller plus loin</p>
-				<li><a href="https://www.vaincrelamuco.org/">Le site français de la mucoviscidose</a></li>
+				<li><a href="https://www.vaincrelamuco.org/">Le site franÃ§ais de la mucoviscidose</a></li>
 				<li><a href="https://soutenir.vaincrelamuco.org/?cid=1">Faire un don</a></li>
 			</ul>
    		</div>
    		<div class="contenu">
    		</div>
       <div id="programme">
-    <h3>Calculateur d'Hardy-Weinberg</h3>
-      <p> Fréquence de l'allèle A: <input type="number" id="fqA" max="1" min="0" style="width:65px; margin-left:-1px;" step="0.005" value="0"></input>.</p>
-      <p> Fréquence de l'allèle B: <input type="number" id="fqB" max="1" min="0" style="width:65px; margin-left:-2px;" step="0.005" value="0"></input>.</p>
-      <p>Fréquence du génotype AA: <span id="fqAA" style="margin-left:-3px"></span>.
-      <p>Fréquence du génotype AB: <span id="fqAB" style="margin-left:-3px"></span>.
-      <p>Fréquence du génotype BB: <span id="fqBB" style="margin-left:-3px"></span>.
-      <script>
-        function fqAA () {
-        $("#fqAA").html(Math.round($("#fqA").val()*$("#fqA").val()*1000000000000)/1000000000000);
-        }
-
-        function fqBB () {
-        $("#fqBB").html(Math.round($("#fqB").val()*$("#fqB").val()*1000000000000)/1000000000000);
-        }
-
-        function fqAB () {
-        $("#fqAB").html(Math.round(2*$("#fqA").val()*$("#fqB").val()*1000000000000)/1000000000000);
-        }
-
-        $("#fqA").change(function () {
-          $("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
-          var max = parseInt($("#fqA").attr('max'));
-          var min = parseInt($("#fqA").attr('min'));
-          if ($("#fqA").val() > max) {
-            $("#fqA").val(max);
-          }
-          else if ($("#fqA").val()<min) {
-            $("#fqA").val(min);
-          };
-        });
-
-        $("#fqB").change(function () {
-          $("#fqB").val(Math.round((1-$("#fqA").val())*10000000)/10000000);
-          var max = parseInt($("#fqB").attr('max'));
-          var min = parseInt($("#fqB").attr('min'));
-          if ($("#fqB").val() > max) {
-            $("#fqB").val(max);
-          }
-          else if ($("#fqB").val()<min) {
-            $("#fqB").val(min);
-          };
-        });
-
-        $("#fqA").change(fqAA);
-        $("#fqA").change(fqAB);
-        $("#fqA").change(fqBB);
-        $("#fqB").change(fqAA);
-        $("#fqB").change(fqAB);
-        $("#fqB").change(fqBB);
-      
-        fqAA();
-        fqBB();
-        fqAB();
-      </script>
+    <h3 class="programme">Calculateur d'Hardy-Weinberg</h3>
+      <select id="populations" title="Choisissez une population!">
+        <option selected disabled>Choisissez une population</option>
+        <option value="cauc" id="cauc">Population caucasienne</option>
+        <option value="arab" id="arab">Population du Moyen-Orient</option>
+        <option value="asia" id="asia">Population asiatique</option>
+        <option value="hisp" id="hisp">Population hispanique</option>
+        <option value="noir" id="noir">Population noire</option>
+      </select>
+      <p class="programme"> FrÃ©quence de l'allÃ¨le sain: <input type="number" id="fqA" max="1" min="0" style="width:75px; margin-right:5px; float:right" step="0.005" value="0"></input></p>
+      <p class="programme"> FrÃ©quence de l'allÃ¨le </br>responsable de la maladie: <input type="number" id="fqB" max="1" min="0" style="width:75px; margin-right:5px; float:right" step="0.005" value="0"></input></p>
+      <p class="programme">FrÃ©quence de la population saine:</br> <center><span id="fqAA" style="margin-left:-3px;" class="programme"></span></center></p>
+      <p class="programme">FrÃ©quence de la population porteuse saine:</br> <center><span id="fqAB" style="margin-left:-3px" class="programme"></span></center></p>
+      <p class="programme">FrÃ©quence de la population malade:</br> <center><span id="fqBB" style="margin-left:-3px" class="programme"></span></center></p>
+      <p style="font-size:0.8em" class="tooltip"><a href="PartieTrois.html#P2" title="Mon fonctionnement">Comprendre mon fonctionnement</a></p>
+      <script src="programme.js"></script>
    		<footer>
    		</footer>
    	</body>

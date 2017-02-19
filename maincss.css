@@ -108,8 +108,21 @@ header .partie {
 	font-family:'Oswald', serif;
 }
 
-.contenu h1,h2 {
+.contenu h1, .contenu h2, .contenu h3, .contenu strong {
 	color:#1776A5;
+}
+
+.contenu table {
+	border-collapse: collapse;
+}
+
+.contenu td, .contenu th {
+	border:1px solid black;
+	text-align:center;
+}
+
+#pop {
+	font-size:0.8em;
 }
 
 .Vaincremuco {
@@ -163,10 +176,18 @@ footer {
 
 .programme, .programme span{
 	color:white;
+
 }
 
 #programme center {
 	padding:-3px;
+}
+#programme a {
+	text-decoration: none;
+	color:black;
+}
+#programme a:hover {
+	color:white;
 }
 
 #populations {
