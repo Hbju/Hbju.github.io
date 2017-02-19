@@ -78,6 +78,7 @@ header .partie {
 	margin-top:0.4%;
 	background-color:rgba(0, 0, 0, 0.7);
 	float:left;
+	border-collapse: collapse;
 }
 
 .left a {
@@ -86,8 +87,22 @@ header .partie {
 }
 
 .left a:hover {
-	color:#1776A5;
-	text-decoration:underline;
+	color:black;
+}
+
+.lefttitres {
+	color:white;
+	font-size:1.1em;
+	text-decoration:underline; 
+	text-align:center;
+	margin:-1px;
+
+}
+
+.navigation {
+	border:0.2px solid black;
+	border-collapse: collapse;
+	background-color: #30343E;
 }
 
 .contenu {

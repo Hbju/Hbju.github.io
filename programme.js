@@ -111,4 +111,12 @@ $(window).scroll(function () {
 	}
 })
 
+$(".navigation").mouseenter(function () {
+	$(this).animate({backgroundColor: '#1776A5'}, 'slow');
+})
+
+$(".navigation").mouseleave(function () {
+	$(this).animate({backgroundColor: '#30343E'}, 'slow');
+})
+
 });
