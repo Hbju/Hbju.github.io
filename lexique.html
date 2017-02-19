@@ -39,47 +39,55 @@
           </ol>
 
           <div id="P1">
-            <li><strong>Espérance de vie</strong>: Durée de vie moyenne d’un individu appartenant un une catégorie de population</li>
-            <li><strong>Symptômes</strong>: Manifestation de la maladie</li>
-            <li><strong>Trypsine</strong>: Un enzyme responsable en partie de la digestion de protéines</li>
-            <li><strong></strong>: </li>
-            <li><strong></strong>: </li>
-            <li><strong></strong>: </li>
-            <li><strong></strong>: </li>
-            <li><strong></strong>: </li>
-            <li><strong></strong>: </li>
-            <li><strong></strong>: </li>
-            <li><strong></strong>: </li>
+            <li><strong>Espérance de vie</strong>: <a href="https://fr.wikipedia.org/wiki/Esp%C3%A9rance_de_vie_humaine">Durée de vie moyenne d’un individu appartenant un une catégorie de population</a></li>
+            <li><strong>Symptôme</strong>: <a href="https://fr.wikipedia.org/wiki/Trypsine">Manifestation de la maladie</a></li>
+            <li><strong>Trypsine</strong>: <a href="">Un enzyme responsable en partie de la digestion de protéines</a></li>
+            <li><strong>Mucus</strong>: <a href="https://fr.wikipedia.org/wiki/Mucus">Sécrétions visqueuses produites par des glandes</a></li>
+            <li><strong>Mutation</strong>: <a href="https://fr.wikipedia.org/wiki/Mutation_(g%C3%A9n%C3%A9tique)">Modification, accidentelle ou provoquée, irréversible de l'information génétique dans le génome</a></li>
+            <li><strong>Sudation</strong>: <a href="https://fr.wikipedia.org/wiki/Transpiration_animale">Transpiration abondante</a></li>
+            <li><strong>Epithélium</strong>: <a href="https://fr.wikipedia.org/wiki/%C3%89pith%C3%A9lium">Ensemble de cellules (tissu) recouvrant la surface externe et les cavités internes de l'organisme</a></li>
+            <li><strong>Information génétique</strong>: <a href="https://fr.wikipedia.org/wiki/G%C3%A9notype">Ensemble des informations qui déterminent les caractères héréditaires des individus</a></li>
+            <li><strong>Déséquilibre osmotique</strong>: <a href="https://fr.wikipedia.org/wiki/Osmose">Inégalité de répartition de matière entre deux milieux qui tend à s’égaliser</a></li>
+            <li><strong>Acide aminé essentiel</strong>: <a href="https://fr.wikipedia.org/wiki/Acide_amin%C3%A9_essentiel">Un des 8 acides aminés qui n'est pas produit par l’Homme</a></li>
+            <li><strong>Chaîne polypeptidique</strong>: <a href="https://fr.wikipedia.org/wiki/Polypeptide">Chaine d’acides aminés liés entre eux par des liaisons peptidiques (des liaisons covalentes)</a></li>
+            <li><strong>Hétérozygote</strong>: <a href="https://fr.wikipedia.org/wiki/H%C3%A9t%C3%A9rozygote">Ayant deux allèles différents du même gène</a></li>
+            <li><strong>Protéine transmembranaire</strong>: <a href="https://fr.wikipedia.org/wiki/Prot%C3%A9ine_transmembranaire">Protéine capable de traverser la membrane cellulaire</a></li>
+            <li><strong>Phénotype</strong>: <a href="https://fr.wikipedia.org/wiki/Ph%C3%A9notype">Caractéristiques observables d’un individu</a></li>
           </div>
 
-          <div id="#P2">
-
+          <div id="P2">
+            <li><strong>Gène </strong>: <a href="https://fr.wikipedia.org/wiki/Gène">un élément d’un chromosome codant un caractère spécifique</a></li>
+            <li><strong>Allèle</strong>: <a href="https://fr.wikipedia.org/wiki/All%C3%A8le">variante d’un gène</a></li>
+            <li><strong>Cellule somatique</strong>: <a href="https://fr.wikipedia.org/wiki/Cellule_somatique">cellule n’étant pas une cellule germinale (cellule liée à la reproduction)</a></li>
+            <li><strong>Allèles codominants</strong>: <a href="https://fr.wikipedia.org/wiki/Codominance">deux allèles d’un même gène qui participent ensemble à la formation d’un nouveau caractère</a></li>
+            <li><strong>Gène diallélique </strong>: gène possédant deux allèles</li>
+            <li><strong>Gène polyallélique</strong>: gène possédant plus de deux allèles</li>
           </div>
 
           <div id="P3">
-
+            <li><strong>Fréquence</strong>: <a href="https://fr.wikipedia.org/wiki/Fr%C3%A9quence_(statistiques)">En statistique, la fréquence est le quotient de l'effectif des observations d'une classe par celui de la population</a></li>
+            <li><strong>Erreur relative</strong>: <a href="http://wwwedu.ge.ch/po/calvin/disciplines/Physique/cours/3_erreurs_incert.pdf">Par définition l’erreur relative est le quotient de l’erreur absolue à la valeur vraie</a></li>
           </div>
 
         </div>
    		</div>
       <div id="programme">
-    <h3 class="programme">Calculateur d'Hardy-Weinberg</h3>
-      <select id="populations" title="Choisissez une population!">
-        <option selected disabled>Choisissez une population</option>
-        <option value="cauc" id="cauc">Population caucasienne</option>
-        <option value="arab" id="arab">Population du Moyen-Orient</option>
-        <option value="asia" id="asia">Population asiatique</option>
-        <option value="hisp" id="hisp">Population hispanique</option>
-        <option value="noir" id="noir">Population noire</option>
-      </select>
-      <p class="programme"> Fréquence de l'allèle sain: <input type="number" id="fqA" max="1" min="0" style="width:75px; margin-right:5px; float:right" step="0.005" value="0"></input></p>
-      <p class="programme"> Fréquence de l'allèle </br>responsable de la maladie: <input type="number" id="fqB" max="1" min="0" style="width:75px; margin-right:5px; float:right" step="0.005" value="0"></input></p>
-      <p class="programme">Fréquence de la population saine:</br> <center><span id="fqAA" style="margin-left:-3px;" class="programme"></span></center></p>
-      <p class="programme">Fréquence de la population porteuse saine:</br> <center><span id="fqAB" style="margin-left:-3px" class="programme"></span></center></p>
-      <p class="programme">Fréquence de la population malade:</br> <center><span id="fqBB" style="margin-left:-3px" class="programme"></span></center></p>
-      <p style="font-size:0.8em" class="tooltip"><a href="PartieTrois.html#P2" title="Mon fonctionnement">Comprendre mon fonctionnement</a></p>
-      <script src="programme.js"></script>
-   		<footer>
-   		</footer>
+        <h3 class="programme">Calculateur d'Hardy-Weinberg</h3>
+          <select id="populations" title="Choisissez une population!">
+            <option selected disabled>Choisissez une population</option>
+            <option value="cauc" id="cauc">Population caucasienne</option>
+            <option value="arab" id="arab">Population du Moyen-Orient</option>
+            <option value="asia" id="asia">Population asiatique</option>
+            <option value="hisp" id="hisp">Population hispanique</option>
+            <option value="noir" id="noir">Population noire</option>
+          </select>
+          <p class="programme"> Fréquence de l'allèle sain: <input type="number" id="fqA" max="1" min="0" style="width:75px; margin-right:5px; float:right" step="0.005" value="0"></input></p>
+          <p class="programme"> Fréquence de l'allèle </br>responsable de la maladie: <input type="number" id="fqB" max="1" min="0" style="width:75px; margin-right:5px; float:right" step="0.005" value="0"></input></p>
+          <p class="programme">Fréquence de la population saine:</br> <center><span id="fqAA" style="margin-left:-3px;" class="programme"></span></center></p>
+          <p class="programme">Fréquence de la population porteuse saine:</br> <center><span id="fqAB" style="margin-left:-3px" class="programme"></span></center></p>
+          <p class="programme">Fréquence de la population malade:</br> <center><span id="fqBB" style="margin-left:-3px" class="programme"></span></center></p>
+          <p style="font-size:0.8em" class="tooltip"><a href="PartieTrois.html#P2" title="Mon fonctionnement">Comprendre mon fonctionnement</a></p>
+          <script src="programme.js"></script>
+      </div>
    	</body>
 </html>
