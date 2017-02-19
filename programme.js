@@ -130,7 +130,7 @@ $("#conclusion").mouseleave(function () {
 })
 
 $("#conclusion").click(function () {
-	window.location.replace('http://hbju.github.io');
+	window.location.replace('http://hbju.github.io/conclusion.html');
 })
 
 });
