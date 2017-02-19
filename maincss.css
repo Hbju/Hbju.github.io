@@ -136,6 +136,15 @@ header .partie {
 	text-align:center;
 }
 
+.contenu a {
+	color:#1776A5;
+}
+
+.contenu a:hover {
+	color:black;
+	text-decoration:none;
+}
+
 #pop {
 	font-size:0.8em;
 }
