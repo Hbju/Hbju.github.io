@@ -43,6 +43,8 @@ $("#populations").selectmenu({
 	}
 });
 
+$( "#populations" ).selectmenu({ width : "100%"});
+
 $("#fqA").change(function () {
 	var max = parseInt($("#fqA").attr('max'));
 	var min = parseInt($("#fqA").attr('min'));
@@ -132,5 +134,9 @@ $("#conclusion").mouseleave(function () {
 $("#conclusion").click(function () {
 	window.location.replace('http://hbju.github.io/conclusion.html');
 })
+
+var t_right = $("#center").css("right");
+var t_left = $("#right").css("left");
+$("#center").css("left", t_left - $("#left").width());
 
 });
