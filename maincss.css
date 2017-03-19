@@ -197,6 +197,16 @@ footer {
 	margin-bottom: 1%;
 }
 
+#progr {
+	border:1px solid #0A374E;
+	background-color: #0C4D6F;
+	border-radius: 3px;
+	height: auto;
+	margin-top:1%;
+	margin-right:5%;
+	margin-left:5%;
+}
+
 #programme h3 {
 	margin-top: -3px;
 }
@@ -238,4 +248,12 @@ strong, span {
 	border-radius:0; 
 	background-color: #1776A5; 
 	text-align:center;
+}
+
+strong {
+	margin:0;
+}
+
+.progr {
+	float:right;
 }

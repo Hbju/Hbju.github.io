@@ -139,4 +139,8 @@ var t_right = $("#center").css("right");
 var t_left = $("#right").css("left");
 $("#center").css("left", t_left - $("#left").width());
 
+$("#sitemuco").click(function () {
+	window.location.replace("http://www.vaincrelamuco.org");
+});
+
 });
